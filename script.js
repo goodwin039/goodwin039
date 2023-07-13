@@ -1,35 +1,46 @@
-const entities = [
-  {
-    text: 'Первый кот',
-    img: 'img\пейзаж-вода-девушка-доска-6334780.jpeg'
-  },
-  {
-    text: 'Второй кот',
-    img: 'img\Фоновый рисунок средства просмотра фотографий Windows.jpg'
-  },
-  {
-    text: 'Третий кот',
-    img: 'img\Lighthouse.jpg'
-  }
-]
+const slider = document.querySelector('.slider');
+const leftArr = document.querySelector('.leftArr');
+const rightArr = document.querySelector('.rightArr');
+const slides = Array.from(slider.querySelectorAll('img'));
+const slideCount = slides.length;
+const admiral = document.querySelector('.admiral');
+const thieves = document.querySelector('.thieves');
+const patriotic = document.querySelector('.patriotic');
+let slideIndex = 0;
 
-const text = document.querySelector('.text')
-const img = document.querySelector('.image')
 
-const setEntity = (index) => {
-  text.innerText = entities[index].text
-  img.style.backgroundImage = `url(${entities[index].img})`
+
+leftArr.addEventListener('click', () => {
+  slideIndex = (slideIndex - 1 + slideCount) % slideCount;
+  slide();
+});
+
+rightArr.addEventListener('click', () => {
+  slideIndex = (slideIndex + 1) % slideCount;
+  slide();
+});
+
+admiral.addEventListener('click', () => {
+  slideIndex = 0;
+  slide();
+});
+
+thieves.addEventListener('click', () => {
+  slideIndex = 1;
+  slide();
+});
+
+patriotic.addEventListener('click', () => {
+  slideIndex = 2;
+  slide();
+});
+
+const slide = () => {
+  const imageWidth = slider.clientWidth;
+  const slideOffset = -slideIndex * imageWidth;
+  slider.style.transform = `translateX(${slideOffset}px)`;
 }
 
-const prev = document.querySelector('.prev')
-const next = document.querySelector('.next')
-let currentIndex = 0
-
-prev.addEventListener('click', () => {
-  setEntity(currentIndex - 1);
-  currentIndex -= 1;
-})
-next.addEventListener('click', () => {
-  setEntity(currentIndex + 1);
-  currentIndex += 1;
-})
+window.addEventListener('load', () => {
+  slide();
+});
