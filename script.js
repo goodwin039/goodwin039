@@ -3,9 +3,7 @@ const leftArr = document.querySelector('.leftArr');
 const rightArr = document.querySelector('.rightArr');
 const slides = Array.from(slider.querySelectorAll('img'));
 const slideCount = slides.length;
-const admiral = document.querySelector('.admiral');
-const thieves = document.querySelector('.thieves');
-const patriotic = document.querySelector('.patriotic');
+
 let slideIndex = 0;
 
 
@@ -19,6 +17,10 @@ rightArr.addEventListener('click', () => {
   slideIndex = (slideIndex + 1) % slideCount;
   slide();
 });
+
+const admiral = document.querySelector('.admiral');
+const thieves = document.querySelector('.thieves');
+const patriotic = document.querySelector('.patriotic');
 
 admiral.addEventListener('click', () => {
   admiral.classList.remove('active_grey');
@@ -51,6 +53,13 @@ patriotic.addEventListener('click', () => {
   slide();  
 });
 
+const secondDot = document.getElementById("secondDot");
+secondDot.addEventListener('click', () => {
+  if(document.getElementById("secondDot").src == "img/roundGrey.svg"){
+    document.getElementById("secondDot").src = "img/roundWhite.svg";
+  }
+});
+
 const slide = () => {
   const imageWidth = slider.clientWidth;
   const slideOffset = -slideIndex * imageWidth;
@@ -58,6 +67,13 @@ const slide = () => {
   
 }
 
+
+
+
+
+
 window.addEventListener('load', () => {
   slide();
 });
+
+
