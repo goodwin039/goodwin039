@@ -219,5 +219,15 @@ li.window-navigation_item{
     cursor: pointer;
 }
 
+.active_yellow{
+    
+    border-bottom: 1px solid #E3B873;
+    color: #E3B873;
+}
 
+.active_grey{    
+    
+    border-bottom: none;
+    color: rgba(255, 255, 255, 0.3);
+}
 
