@@ -149,6 +149,38 @@ h1.title{
     /* padding-bottom: -200px; */
 }
 
+/* 
+.dot_white{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block; 
+    cursor: pointer;
+    border: none;
+    background: #FFFFFF;
+    color: transparent;
+    border: none;
+    font-size: 0;
+} */
+
+.dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #696868;
+    font-size: 0;
+}
+
+.active{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: white;
+    font-size: 0;
+}
+
 .margin-dot{
     margin-left: 10px;
     margin-right: 10px;
@@ -225,12 +257,19 @@ li.window-navigation_item{
     color: #E3B873;
 }
 
-.active_grey{    
-    
+.active_grey{   
     border-bottom: none;
     color: rgba(255, 255, 255, 0.3);
 }
 
 img[alt="dot"]{
     cursor: pointer;
+}
+
+.background_white{
+    background: white;
+}
+
+.background_grey{
+    background: #696868;
 }
